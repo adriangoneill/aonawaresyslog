@@ -33,7 +33,7 @@ namespace Aonaware.Utility.Database.Tests
 	[TestFixture]
 	public class DbTraceListenerTest
 	{
-		[TestFixtureSetUp] public void Initialize()
+		[OneTimeSetUpAttribute] public void Initialize()
 		{
             string db = Properties.Settings.Default.DbConnection;
             if (db == null || db.Length == 0)
@@ -53,7 +53,7 @@ namespace Aonaware.Utility.Database.Tests
 			ClearTable();
 		}
 
-		[TestFixtureTearDown] public void Dispose()
+		[OneTimeTearDownAttribute] public void Dispose()
 		{
 			if (_listener != null)
 				Trace.Listeners.Remove(_listener);

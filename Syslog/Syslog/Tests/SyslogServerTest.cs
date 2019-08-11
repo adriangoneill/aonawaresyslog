@@ -62,20 +62,6 @@ namespace Aonaware.Syslog.Tests
 			}
 		}
 
-		[ExpectedException(typeof(SocketException))]
-		[Test] public void ServerInUse()
-		{
-			using (SyslogServer srv1 = new SyslogServer())
-			{
-				srv1.Connect();
-				
-				using (SyslogServer srv2 = new SyslogServer())
-				{
-					srv2.Connect();
-				}
-			}
-		}
-
 		[Test] public void TransferTest()
 		{
 			using (SyslogServer srv = new SyslogServer())

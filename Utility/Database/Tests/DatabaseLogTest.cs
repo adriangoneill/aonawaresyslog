@@ -78,7 +78,7 @@ namespace Aonaware.Utility.Database.Tests
 			return db;
 		}
 
-		[TestFixtureSetUp] public void Initialize()
+		[OneTimeSetUpAttribute] public void Initialize()
 		{
 			_conn = new OleDbConnection(DbConn());
 			_conn.Open();
@@ -90,7 +90,7 @@ namespace Aonaware.Utility.Database.Tests
 			_startEvent = new ManualResetEvent(false);
 		}
 
-		[TestFixtureTearDown] public void Dispose()
+		[OneTimeTearDownAttribute] public void Dispose()
 		{
 			// Clear down table
 			ClearTable();

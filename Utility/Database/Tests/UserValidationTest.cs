@@ -30,7 +30,7 @@ namespace Aonaware.Utility.Database.Tests
 	[TestFixture]
 	public class UserValidationTest
 	{
-		[TestFixtureSetUp] public void Initialize()
+		[OneTimeSetUpAttribute] public void Initialize()
 		{
             string db = Properties.Settings.Default.DbConnection;
             if (db == null || db.Length == 0)
@@ -45,7 +45,7 @@ namespace Aonaware.Utility.Database.Tests
 			UserValidation.Instance.AddUser(_user, _pass);
 		}
 
-		[TestFixtureTearDown] public void Dispose()
+		[OneTimeTearDownAttribute] public void Dispose()
 		{
 			// Remove test user
 			UserValidation.Instance.DeleteUser(_user);
