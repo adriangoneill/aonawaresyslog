@@ -1,0 +1,42 @@
+BODY, DIV, TD
+{
+	font-weight: normal;
+	font-size: 10pt;
+	color: black;
+	font-family: Verdana;
+}
+
+P
+{
+	font-weight: normal;
+	font-size: 10pt;
+	color: black;
+	font-family: Verdana;
+	margin-right: 20px;
+}
+
+LI
+{
+	font-weight: normal;
+	font-size: 10pt;
+	color: black;
+	font-family: Verdana;
+	padding: 3px;	
+}
+
+H1
+{
+	font-weight: normal;
+	font-size: 14pt;
+	color: black;
+	font-family: Arial;
+}
+
+H2
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: black;
+	font-family: Arial;
+	padding-top: 15px;
+}

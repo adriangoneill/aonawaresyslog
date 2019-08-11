@@ -1,0 +1,122 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyslogReceiver", "SyslogReceiver\SyslogReceiver.csproj", "{6A2B536C-590B-4BE5-88DF-38F67AE7422B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syslog", "Syslog\Syslog.csproj", "{D34EFB1B-C26D-4F91-BD84-FC92F13438EB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyslogService", "SyslogService\SyslogService.csproj", "{2FC4C601-C2E5-48B8-BB11-6A52EF7B39DC}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSyslogService", "SetupSyslogService\SetupSyslogService.vdproj", "{C34CE81A-D1BD-4943-B62F-E2E3380D7022}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyslogShared", "SyslogShared\SyslogShared.csproj", "{1D4038A9-8C0B-4BBC-A37C-4AE18764A4D6}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyslogWeb", "SyslogWeb\SyslogWeb.csproj", "{FF01DACC-771C-4535-B1F3-649757F5AE91}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.Networking", "..\Utility\Networking\Utility.Networking.csproj", "{6D893937-AA5E-45D6-89BE-317E1FA60AD3}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.Configuration", "..\Utility\Configuration\Utility.Configuration.csproj", "{F4D5BE48-C4BB-4603-945F-F0623027C1A3}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSyslogWeb", "SetupSyslogWeb\SetupSyslogWeb.vdproj", "{E2E7B5D7-7E25-43D3-9921-5BF0379893D9}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.WinForms", "..\Utility\WinForms\Utility.WinForms.csproj", "{BD2E6FC8-8FFB-4308-9960-CB511F0782DD}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.Database", "..\Utility\Database\Utility.Database.csproj", "{22AB2134-9540-4B43-9DE4-3DF2B43290C3}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A2B536C-590B-4BE5-88DF-38F67AE7422B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2B536C-590B-4BE5-88DF-38F67AE7422B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2B536C-590B-4BE5-88DF-38F67AE7422B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2B536C-590B-4BE5-88DF-38F67AE7422B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D34EFB1B-C26D-4F91-BD84-FC92F13438EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34EFB1B-C26D-4F91-BD84-FC92F13438EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34EFB1B-C26D-4F91-BD84-FC92F13438EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34EFB1B-C26D-4F91-BD84-FC92F13438EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC4C601-C2E5-48B8-BB11-6A52EF7B39DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC4C601-C2E5-48B8-BB11-6A52EF7B39DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC4C601-C2E5-48B8-BB11-6A52EF7B39DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC4C601-C2E5-48B8-BB11-6A52EF7B39DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34CE81A-D1BD-4943-B62F-E2E3380D7022}.Debug|Any CPU.ActiveCfg = Debug
+		{C34CE81A-D1BD-4943-B62F-E2E3380D7022}.Release|Any CPU.ActiveCfg = Release
+		{1D4038A9-8C0B-4BBC-A37C-4AE18764A4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4038A9-8C0B-4BBC-A37C-4AE18764A4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4038A9-8C0B-4BBC-A37C-4AE18764A4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4038A9-8C0B-4BBC-A37C-4AE18764A4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF01DACC-771C-4535-B1F3-649757F5AE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF01DACC-771C-4535-B1F3-649757F5AE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF01DACC-771C-4535-B1F3-649757F5AE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF01DACC-771C-4535-B1F3-649757F5AE91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D893937-AA5E-45D6-89BE-317E1FA60AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D893937-AA5E-45D6-89BE-317E1FA60AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D893937-AA5E-45D6-89BE-317E1FA60AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D893937-AA5E-45D6-89BE-317E1FA60AD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D5BE48-C4BB-4603-945F-F0623027C1A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D5BE48-C4BB-4603-945F-F0623027C1A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D5BE48-C4BB-4603-945F-F0623027C1A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D5BE48-C4BB-4603-945F-F0623027C1A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E7B5D7-7E25-43D3-9921-5BF0379893D9}.Debug|Any CPU.ActiveCfg = Debug
+		{E2E7B5D7-7E25-43D3-9921-5BF0379893D9}.Release|Any CPU.ActiveCfg = Release
+		{BD2E6FC8-8FFB-4308-9960-CB511F0782DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2E6FC8-8FFB-4308-9960-CB511F0782DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2E6FC8-8FFB-4308-9960-CB511F0782DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2E6FC8-8FFB-4308-9960-CB511F0782DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22AB2134-9540-4B43-9DE4-3DF2B43290C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AB2134-9540-4B43-9DE4-3DF2B43290C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AB2134-9540-4B43-9DE4-3DF2B43290C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AB2134-9540-4B43-9DE4-3DF2B43290C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

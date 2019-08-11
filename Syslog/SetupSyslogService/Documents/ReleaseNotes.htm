@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Aonaware Syslog Daemon Release Notes</title>
+    <style type="text/css"> BODY, DIV, TD { font-weight: normal; font-size: 10pt; color: black; font-family: Verdana; }
+	P { font-weight: normal; font-size: 10pt; color: black; font-family: Verdana; margin-right: 20px; }
+	LI { font-weight: normal; font-size: 10pt; color: black; font-family: Verdana; padding: 3px; }
+	H1 { font-weight: normal; font-size: 14pt; color: black; font-family: Arial; }
+	H2 { font-weight: bold; font-size: 12pt; color: black; font-family: Arial; padding-top: 15px; }
+	H3, TH { font-weight: bold; font-size: 10pt; color: black; font-family: Arial; padding-top: 15px; }
+	CODE { font-family: Courier; font-size: 10pt; text-decoration:none; color:Black; }
+	</style>
+</head>
+<body>
+    <h1>
+        Aonaware Syslog Daemon Release Notes</h1>
+    <p>
+        Aonaware Syslog Daemon version 2.0<br />
+        ©2008 Adrian O' Neill
+    </p>
+    <h2>
+        Introduction</h2>
+    <p>
+        Aonaware Syslog Daemon is an industrial strength Syslog Server for Windows. Syslog
+        messages are received by the server and stored in a Microsoft SQL Server or SQL
+        Server Express database. Syslog messages can then be viewed using the integrated
+        Aonaware Syslog Web Client.</p>
+    <h2>
+        Installation Prerequisites</h2>
+    <p>
+        Supported Operating Systems:</p>
+    <ul>
+        <li>Microsoft Windows Server 2003 / 2008 (Recommended) </li>
+        <li>Microsoft Windows XP Professional</li>
+        <li>Microsoft Windows Vista</li>
+    </ul>
+    <p>
+        Supported Database Software:</p>
+    <ul>
+        <li>Microsoft SQL Server 2000 or later </li>
+        <li>Microsoft SQL Server 2005 Express Edition or later - This is a free desktop server
+            application provided my Microsoft.</li>
+    </ul>
+    <p>
+        The following operating system components are also required:</p>
+    <ul>
+        <li>Microsoft .NET Framework Version 2.0 (Will be downloaded automatically if required)</li>
+        <li>Internet Information Services with ASP.NET (Required for Web Client Functionality)
+        </li>
+    </ul>
+    <h2>
+        Known Issues</h2>
+    <p>
+        The following are known issues with this release of Aonaware Syslog Daemon:</p>
+    <ul>
+        <li>Database credentials are stored in plain text after installation. If you configure
+            Aonaware Syslog Daemon to use SQL Server authentication, the database username and
+            password are stored unencrypted in the installation folder. To workaround this issue,
+            use Windows authentication to connect to the database or alternatively ensure the
+            permissions on the installation folder do not allow ordinary users read access.
+        </li>
+        <li>When you uninstall Aonaware Syslog Daemon the database created during installation
+            will be deleted. If you have created any tables in this database, they will be removed
+            also. Do not create any new tables in the Syslog database. </li>
+        <li>All Syslog messages (regardless of source) are stored in the database. This presents
+            a possible denial of service attack as a sender could flood the application with
+            messages. To work around this issue you should block Syslog messages from getting
+            through your firewall (UDP 514 by default).</li>
+    </ul>
+    <h2>
+        Installation Guide</h2>
+    <ol>
+        <li>
+            <h3>
+                Install Microsoft SQL Server or Microsoft SQL Server Express Edition</h3>
+            <p>
+                Aonaware Syslog Daemon requires a database in order to store Syslog messages. Currently
+                the only supported databases are Microsoft SQL Server 2000 or later, or Microsoft
+                SQL Server Express Edition 2005 or later.</p>
+            <p>
+                If you wish to use Microsoft SQL Server, install the product as per the installation
+                instructions.</p>
+            To use the free Microsoft SQL Server Express Edition database, download the installation
+            files from the <a href="http://www.microsoft.com/sql/editions/express/default.mspx">
+                Microsoft Web Site</a>.
+            <p>
+            </p>
+            <p>
+                The recommended installation mode for Aonaware Syslog Daemon is to use SQL Server
+                in Windows authentication mode. This is the default mode for SQL Server Express
+                Edition.&nbsp; Follow the on-screen installation instructions and restart the system
+                if necessary.</p>
+            <p>
+                Windows Vista Users should ensure that they check the 'Add user to the SQL Server
+                Administrator role' when asked.&nbsp; This will ensure you have the permissions
+                to create the syslog database.</p>
+            <img src="Images/sql.png" align="middle" border="0" />
+        </li>
+        <li>
+            <h3>
+                Install Aonaware Syslog Daemon</h3>
+            <p>
+                <a href="SyslogDaemon/setup.exe">Install</a> the Aonaware Syslog Daemon from the
+                installation directory.</p>
+            <h3>
+                Welcome Screen</h3>
+            <p>
+                Choose 'Next' at the first screen.</p>
+            <img src="Images/server1.png" align="middle" border="0">
+            <h3>
+                Database Creation Information</h3>
+            <p>
+                As part of the installation process, the setup application will automatically create
+                a database to hold Syslog messages on the SQL Server. In order to create this database,
+                the setup application needs to login to the database with user credentials that
+                are powerful enough to create a database.</p>
+            <img src="Images/server2.png" align="middle" border="0">
+            <p>
+                If you are using the default SQL Server Express setup with Windows authentication,
+                you do not need to enter any information on this page and you can simply click 'Next'</p>
+            <p>
+                If however you are using a remote database or your database is set up to authenticate
+                using SQL Server authentication mode, enter the relevant details here. To use a
+                named instance of SQL Server, enter the server name as MACHINE\INSTANCE.</p>
+            <h3>
+                Database Login Information</h3>
+            <p>
+                When Aonaware Syslog Daemon is running it needs to connect to the database in order
+                to store Syslog messages. This setup screen specifies how Aonaware Syslog Daemon
+                should authenticate to the database when operating.</p>
+            <img src="Images/server3.png" align="middle" border="0">
+            <p>
+                If you are using the default SQL Server Express setup with Windows authentication,
+                you do not need to enter any information on this page and you can simply click 'Next'.</p>
+            <p>
+                If you wish to use SQL Server authentication, you must create the login in the database
+                before entering any information here. The login should be a normal database user
+                only; special permissions are not required.</p>
+            <p>
+                Note that if you are using Windows authentication, Aonaware Syslog Daemon will try
+                and connect to the database using authentication details of the local system account,
+                as the daemon runs as a Windows service. The daemon will only be able to connect
+                if:</p>
+            <ul>
+                <li>The database is running on the same machine as Aonaware Syslog Daemon
+                    <li>The database service is started under the local system account</li>
+            </ul>
+            <p>
+                This is the case for the default SQL Server express installation. However if either
+                of these criteria are not met in your environment and you wish to use Windows authentication
+                you must assign Windows login details for the 'Aonware Syslog Daemon' service using
+                the 'Services' administrative tool.</p>
+            <h3>
+                Select Installation Folder</h3>
+            <p>
+                To complete installation you must choose an installation directory.</p>
+            <img src="Images/server4.png" align="middle" border="0">
+            <p>
+                The setup will now try and create any necessary database objects and will automatically
+                start the Aonware Syslog Daemon service. Check the Event Log for any error messages.</p>
+        </li>
+        <li>
+            <h3>
+                Install Internet Information Services / ASP.NET</h3>
+            <p>
+                IIS and ASP.NET are required in order to use the integrated Aonaware Syslog Web
+                Client.</p>
+            <h3>
+                Instructions for Windows Vista</h3>
+            <h3>
+                Installation of IIS and ASP.NET</h3>
+            <p>
+                From the Windows Control Panel, choose 'Programs'. Select 'Turn Windows features
+                on or off'. Expand 'Internet Information Services', 'World Wide Web Services' and
+                'Application Development Features'</p>
+            <img src="Images/vistaiis.png" align="middle" border="0">
+            <p>
+                Check the box for the 'ASP.NET' component, and the 'Common Http Features'</p>
+            <p>
+                Click 'OK'. This will automatically install both ASP.NET and IIS.</p>
+            <h3>
+                Instructions for Windows XP</h3>
+            <h3>
+                Installation of IIS</h3>
+            <p>
+                From the Windows Control Panel, choose 'Add/Remove Programs'. Select 'Add/Remove
+                Windows Components'. Select 'Internet Information Services (IIS)' and choose 'Details'.</p>
+            <img src="Images/w2000iis1.png" align="middle" border="0">
+            <p>
+                Check the box for the 'World Wide Web Server' component.</p>
+            <img src="Images/w2000iis2.png" align="middle" border="0">
+            <p>
+                Click 'OK', and then click 'Next'.</p>
+            <h3>
+                Instructions for Windows Server 2003</h3>
+            <h3>
+                Installation of IIS and ASP.NET</h3>
+            <p>
+                From the Windows Control Panel, choose 'Add/Remove Programs'. Select 'Add/Remove
+                Windows Components'. Select 'Application Server' and choose 'Details'</p>
+            <img src="Images/w2003iis1.png" align="middle" border="0">
+            <p>
+                Check the box for the 'ASP.NET' component.</p>
+            <img src="Images/w2003iis2.png" align="middle" border="0">
+            <p>
+                Click 'OK', and then click 'Next'. This will automatically install both ASP.NET
+                and IIS.</p>
+        </li>
+        <li>
+            <h3>
+                Install the Aonaware Syslog Web Client</h3>
+            <p>
+                <a href="SyslogWebClient/setup.exe">Install</a> the Aonaware Syslog Web Client from
+                the installation directory.</p>
+            <h3>
+                Welcome Screen</h3>
+            <p>
+                Choose 'Next' at the first screen.</p>
+            <img src="Images/client1.png" align="middle" border="0">
+            <h3>
+                Database Information</h3>
+            <p>
+                The setup will need to login to the database to make some configuration changes.
+                As with the daemon installation you must provide credentials which are powerful
+                enough to modify database information.</p>
+            <img src="Images/client2.png" align="middle" border="0">
+            <p>
+                If you are using the default SQL Server Express setup with Windows authentication,
+                you do not need to enter any information on this page and you can simply click 'Next'.</p>
+            <h3>
+                Database Login Information</h3>
+            <p>
+                The Aonaware Syslog Web Client needs to connect to the database in order to display
+                Syslog messages. Once again you must provide a user account.</p>
+            <img src="Images/client3.png" align="middle" border="0">
+            <p>
+                If you are using the default SQL Server express setup with Windows authentication,
+                you do not need to enter any information on this page and you can simply click 'Next'.</p>
+            <p>
+                If you want to use SQL Server authentication, you must create the login in the database
+                before entering any login information here. You may use the same login that was
+                created for the Syslog Daemon.</p>
+            <p>
+                Note that if you are using Windows authentication the application will try to connect
+                to the database using the account used by the ASP.NET process. This account is a
+                member of the IIS_WPG group under Windows Server 2003, and is called ASPNET under
+                all other supported operating systems.</p>
+            <p>
+                If you are using Windows authentication and the database is on the same machine
+                as the Aonaware Syslog Daemon the installation process will automatically create
+                a database login for the correct service account (either IIS_WPG or ASPNET). Using
+                Windows authentication when the database resides on a different machine from the
+                Syslog Web Client is not recommended. For more information on how ASP.NET connects
+                to Microsoft SQL Server, consult Microsoft Knowledge Base Article <a href="http://support.microsoft.com/?scid=kb;en-us;316989&amp;spid=2852&amp;sid=global">
+                    316989</a>.</p>
+            <h3>
+                Select Installation Address</h3>
+            <p>
+                To complete the installation you must choose a virtual directory where the Syslog
+                Web Client will be installed.</p>
+            <img src="Images/client4.png" align="middle" border="0">
+            <p>
+                When the installation is complete you can start to view Syslog messages by navigating
+                to the correct virtual directory. If you have chosen the default virtual directory
+                you can view the Syslog messages at <a href="http://localhost/Syslog/">http://localhost/Syslog/</a></p>
+        </li>
+    </ol>
+    <h2>
+        Configuration</h2>
+    <p>
+        Aonaware Syslog Daemon can be started and stopped from the 'Services' console under
+        'Administrative Tools'.&nbsp; By default, the daemon will start when Windows starts.</p>
+    <p>
+        The server&nbsp;can be configured by using the Aonaware Web Client. Choose the 'Configuration'
+        option on the main page to begin.</p>
+    <p>
+        By default, Aonaware Syslog Daemon will listen for Syslog messages on UDP port 514.
+        You can change this port, however not all devices support ports other than 514.</p>
+    <p>
+        Aonaware Syslog Daemon will also automatically delete any Syslog messages that are
+        older than 14 days. You can change this period using the configuration screen. If
+        you require that all Syslog messages are retained, enter a period of zero days.</p>
+    <h2>
+        Removing Aonaware Syslog Daemon</h2>
+    <p>
+        You can remove Aonaware Syslog Daemon by using the 'Add/Remove Programs' from the
+        Windows Control Panel. When you uninstall the daemon the database containing all
+        syslog messages will be removed.
+    </p>
+    <h2>
+        Version History</h2>
+    <table border="1" cellspacing="1" cellpadding="1">
+        <tr>
+            <th align="left">
+                Version</th>
+            <th align="left">
+                Date</th>
+            <th align="left">
+                Comments</th>
+        </tr>
+        <tr>
+            <td>
+                1.0</td>
+            <td>
+                21 Aug 2005</td>
+            <td>
+                Initial Release</td>
+        </tr>
+        <tr>
+            <td>
+                1.1</td>
+            <td>
+                3 Sep 2005</td>
+            <td>
+                Support for named database instances<br />
+                Server now correctly starts on machine restart</td>
+        </tr>
+        <tr>
+            <td>
+                2.0</td>
+            <td>
+                10 October 2008</td>
+            <td>
+                Moved to .NET Framework 2.0<br />
+                Support for SQL Server 2005, Vista Operating Systems
+            </td>
+        </tr>
+    </table>
+    <h2>
+        Further Information</h2>
+    <p>
+        For more information or contact details please visit <a href="http://www.aonaware.com/">
+            http://www.aonaware.com/</a>
+    </p>
+</body>
+</html>
